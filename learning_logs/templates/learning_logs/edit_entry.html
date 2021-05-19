@@ -1,0 +1,20 @@
+{% extends "learning_logs/base.html" %}
+{% load bootstrap3 %}
+{% block header%}
+    <h3><a href="{% url 'topic' topic.id %}">{{ topic }}</a></h3>
+{% endblock %}
+{% block content %}
+    <h3>Edit entry:</h3>
+    <form action="{% url 'edit_entry' entry.id %}" method='post'>
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+    <button name='submit' class="btn btn-primary">save changes</button>
+    {% endbuttons %}
+    </form>
+
+{% endblock content %}
+
+
+
+<!--C:\Users\Никита\Desktop\PYTHON\DJANGO\learning_log\learning_logs\templates\learning_logs\edit_entry.html-->
