@@ -52,7 +52,7 @@ def new_topic(request):
     context = {'form': form}
     return render(request, 'learning_logs/new_topic.html', context)
 
-
+# new entry
 @login_required
 def new_entry(request, topic_id):
     """Добавляет новую запись по конкретной теме"""
@@ -73,7 +73,7 @@ def new_entry(request, topic_id):
     context = {'topic': topic, 'form': form}
     return render(request, 'learning_logs/new_entry.html', context)
 
-
+# edit entry
 @login_required
 def edit_entry(request, entry_id):
     """Редактирует сущетсвуюющую запись"""
