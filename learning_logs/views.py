@@ -94,7 +94,7 @@ def edit_entry(request, entry_id):
     context = {'topic': topic, 'entry': entry, 'form': form}
     return render(request, 'learning_logs/edit_entry.html', context)
 
-
+# if request.user is owner
 def check_topic_owner(owner, user):
     if owner == user:
         return True
