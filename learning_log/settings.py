@@ -21,10 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# SECRET_KEY = 'django-insecure-t^hl^1s-&^xn$@e1w3eeo%@7t@yqo(cm*c+c4mo2$js4s-$7l*'
 SECRET_KEY = 'django-insecure-t^hl^1s-&^xn$@e1w3eeo%@7t@yqo(cm*c+c4mo2$js4s-$7l*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# DEBUG = True
+DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
 ALLOWED_HOSTS = ['learning-logs-site.herokuapp.com']
 
@@ -125,8 +127,8 @@ STATIC_URL = '/static/'
 LOGIN_URL = '/users/login/'
 # Настройки django-bootstrap3
 BOOTSTRAP3 = {
- 'include_jquery': True,
- }
+    'include_jquery': True,
+}
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
