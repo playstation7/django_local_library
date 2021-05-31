@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-t^hl^1s-&^xn$@e1w3eeo%@7t@yqo(cm*c+c4mo2$js4s-$7l*
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
 ALLOWED_HOSTS = ['learning-logs-site.herokuapp.com']
-
+# ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
@@ -131,7 +131,6 @@ BOOTSTRAP3 = {
 }
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 DATABASES = {
     'default': dj_database_url.config(default='postgres://localhost')
 }
